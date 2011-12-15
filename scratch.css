@@ -1,0 +1,79 @@
+/* @override http://localhost/scratchgrid/scratch.css */
+
+/*
+ *
+ * Configuration options:
+ *
+ * $baseline  = 28px  (value + unit)     // We should decide what units will be accepted: px, percentage and or em
+ * $columns   = 35    (null or integer)  // If null, then the grid will simply create as many columns as will fit accross the screen
+ * $rtl       = false (true or false)
+ * $fluid     = false (true or false)
+ * $spacing   = margin  (string: margin, spacing, postioning)    // Determines whether gutter spacing is achieved through margins, padding or relative positioning. This can be important when working with images. Not sure about positioning, maybe padding and margin will suffice
+ * $namespace = null  (null or a string) // This will prove usefull when combining grids with different spacing methods. This may well become the most important feature towards flexibility.
+ *
+ */
+
+body {
+	margin: 0;
+	background-color: #f4f4f4;
+	font-size: 75%;
+	/* Read somewhere that that makes resizing for MSIE6 more optimal */
+	line-height: 28px;
+	/* for RTL add: 'direction: rtl;' */
+}
+.block {
+	position: relative;
+	display: block !important;
+	float: none !important;
+	margin: 0 auto;
+}
+.group {
+	/* Debug */
+	background-color: grey;
+}
+.group, .stretch-1, .stretch-2, .stretch-3, .stretch-4, .stretch-5, .stretch-6, .stretch-35 {
+	position: relative;
+	display: inline;
+	float: left;
+}
+
+.stretch-1 {
+	width: 28px;
+}
+.stretch-2 {
+	width: 56px;
+}
+.stretch-6 {
+	width: 168px;
+	/* Debug */
+	background-color: silver;
+}
+.stretch-14 {
+	width: 392px;
+}
+.stretch-18 {
+	width: 504px;
+}
+.stretch-30 {
+	width: 840px;
+}
+.stretch-35 {
+	width: 980px;
+}
+
+/* .left-# and .right-# will eliminate need for separate .skip-# and .tug-# classes, they will handle both gutter spacing and offset. */
+.left-1, .left-2, .left-35 {
+	position: relative;
+}
+.left-1 {
+	margin-left: 28px;
+}
+.left-2 {
+	margin-left: 56px;
+}
+.left-3 {
+	margin-left: 84px;
+}
+.right-1 {
+	margin-right: 28px;
+}
