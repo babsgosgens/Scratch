@@ -1,0 +1,56 @@
+/* Scratch Grid System 
+ *
+ * This grid assumes that a gutter is of equal width as a single column which is defined by the baseline value
+ */
+
+// Set some config values by hand for now, these will have to be configured when installing scratch
+
+// Baseline (value + unit)
+// We should decide what units will be accepted: px, percentage and or em
+$baseline: 28px;
+ 
+// Left and rigth page margins (auto or value + unit)
+$margins: auto;
+
+// Columns (integer)
+$columns: 35;
+
+// Gutter tpye (string: margin, spacing, postioning)
+// Determines whether gutter spacing is achieved through margins, padding or relative positioning. 
+// This can be important when working with images and backgrounds. 
+// Not sure about positioning, maybe padding and margin will suffice. 960 uses positioning for push.
+$gutter: margin;
+
+// Fluid (true or false)
+$fluid: false;
+
+// RTL (true or false)
+$rtl: false;
+
+// Namespace (null or string)
+// Not sure if we still need this, 
+// but a designer possibly wants to mix a margin and a padding version (see $gutter) of the same grid.
+// Namespacing will allow for this.
+$namespace: null;
+
+
+// Calculate column width
+@function column-width( $baseline ) {
+	@if $fluid == true {
+		// Convert to percentages
+	}
+	@else {
+		@return $baseline;
+	}
+}
+
+$column-width: column-width();
+
+
+@mixin body {
+	margin: 0;
+	line-height: $baseline;
+	@if $rtl == true {
+	    direction: rtl;
+	}
+}

@@ -1,0 +1,79 @@
+body {
+	@include body;
+}
+
+@for $i from 1 through $columns {
+	.stretch-#{$i} {
+		@extend .group;
+	}
+}
+
+
+.block {
+	position: relative;
+	float: none !important;
+	margin: 0 auto;
+}
+.block + * {
+	clear: both;
+}
+
+.group {
+	position: relative;
+	float: left;
+}
+
+// Create columns
+@for $i from 1 through $columns {
+	.stretch-#{$i} {
+		width: $column-width * $i;
+	}
+}
+
+// Create left column margins (gutters)
+@for $i from 1 through $columns {
+
+	@if $gutter == margin {
+		.left-#{$i} {
+			margin-left: $column-width * $i;
+		}
+		.right-#{$i} {
+			margin-right: $column-width * $i;
+		}
+	}
+	@if $gutter == padding {
+		.left-#{$i} {
+			padding-left: $column-width * $i;
+		}		
+		.right-#{$i} {
+			padding-right: $column-width * $i;
+		}		
+	}
+	@if $gutter == positioning {
+		.left-#{$i} {
+			position: relative;
+			left: $column-width * $i;
+			margin-right: -1 * ($column-width * $i);
+		}		
+		.right-#{$i} {
+			margin-right: $column-width * $i;
+		}		
+	}
+}
+
+
+
+/*
+ * Styling stuff */
+.group, .stretch-6, .stretch-14, ul {
+	background-color: rgba(0,0,0,.1) ;
+}
+header {
+	background-color: aqua;
+}
+nav {
+	background-color: teal;
+}
+ul {
+	padding: 0;
+}
