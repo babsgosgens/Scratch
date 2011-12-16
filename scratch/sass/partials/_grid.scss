@@ -13,6 +13,7 @@ body {
 	position: relative;
 	float: none !important;
 	margin: 0 auto;
+	width: $content-width;
 }
 .block + * {
 	clear: both;
@@ -59,21 +60,4 @@ body {
 			margin-right: $column-width * $i;
 		}		
 	}
-}
-
-
-
-/*
- * Styling stuff */
-.group, .stretch-6, .stretch-14, ul {
-	background-color: rgba(0,0,0,.1) ;
-}
-header {
-	background-color: aqua;
-}
-nav {
-	background-color: teal;
-}
-ul {
-	padding: 0;
 }

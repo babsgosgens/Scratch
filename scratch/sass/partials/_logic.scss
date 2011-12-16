@@ -8,7 +8,16 @@
 // Baseline (value + unit)
 // We should decide what units will be accepted: px, percentage and or em
 $baseline: 28px;
- 
+
+// There are two ways to set the content width, either by setting the margins (what remains is the content width), 
+// or by specifying the content width itself. The second scenario leaves room for a second tweak: 
+// defining whether the content width is centered accross the view port, 
+// or flushed left (right). So let's give that a go instead of margins.
+$content-width: 994px;
+
+// Page alignments (center, left, right)
+$alignment: center;
+
 // Left and rigth page margins (auto or value + unit)
 $margins: auto;
 
@@ -34,17 +43,36 @@ $rtl: false;
 $namespace: null;
 
 
-// Calculate column width
-@function column-width( $baseline ) {
+// Set content width
+@function content-width($content-width) {
 	@if $fluid == true {
-		// Convert to percentages
+		// We will assume that 1024px == 100%
+		$content-width: percentage($content-width/1024px);
 	}
-	@else {
-		@return $baseline;
-	}
+	@return $content-width;
 }
 
+// Determine column width
+@function column-width( $baseline ) {
+
+	// If number of columns is configurated, then this will be leading towards the column width
+	@if $columns != 35 {
+		$baseline: $width/$columns;
+	}
+
+	@if $fluid == true {
+		// Convert to percentages
+		 @if unit($baseline) == "px" {
+		 	
+		 }
+
+	}
+	@return $baseline;
+}
+
+// Set recalculated values
 $column-width: column-width();
+$content-width: content-width();
 
 
 @mixin body {
