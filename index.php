@@ -16,7 +16,7 @@
 <div role="main" class="block">
 	<section class="group">
 		<article class="stretch-6 right-1"><##></article>
-		<article class="stretch-6 left-1"><##></article>
+		<article class="stretch-6 left-1">Donec et neque et nulla mollis gravida. Proin tempor turpis in urna facilisis euismod. Ut dictum nulla nec diam ultricies eu aliquam elit feugiat.</article>
 	</section>
 	<section class="group left-2">
 		<article class="stretch-6 right-1">Etiam vestibulum semper adipiscing. In eget nibh mi. Sed ipsum eros, bibendum sit amet mollis placerat, rhoncus ac nibh. Nulla elementum molestie massa, sed posuere neque accumsan a. Donec et neque et nulla mollis gravida. Proin tempor turpis in urna facilisis euismod. Ut dictum nulla nec diam ultricies eu aliquam elit feugiat.</article>
@@ -36,10 +36,8 @@
 <div class="block">
 	<section class="group">
 		<article class="stretch-6 right-1"><##></article>
-		<article class="stretch-6 left-1"><##></article>
-	</section>
-	<section class="group left-2">
-		<article class="stretch-6 right-1"><##></article>
+		<article class="stretch-6 left-1">Donec et neque et nulla mollis gravida. Proin tempor turpis in urna facilisis euismod. Ut dictum nulla nec diam ultricies eu aliquam elit feugiat.</article>
+		<article class="stretch-6 left-2 right-1"><##></article>
 		<article class="stretch-6 left-1"><##></article>
 	</section>
 	<aside class="stretch-2 left-3"><##></aside>
